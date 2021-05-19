@@ -1,17 +1,117 @@
 .parent {
+    display: grid;
+    grid-column: 400px;
+    grid-template-rows: 40px 120px 300px 50px;
+    grid-template-areas: "header" "main" "area" "footer";
+    grid-gap: 3px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: red;
+}
+
+.main {
+    background-color: blue;
+}
+
+.area {
+    background-color: gray;
+}
+
+.footer {
+    background-color: green;
+}
+
+body {
+    font-size: 20px;
+    color: blanchedalmond;
+    padding: 1rem;
+    margin: 5px;
+}
+
+@media (min-width: 1024px) {
+    .parent {
         display: grid;
-        grid-column: 400px;
-        grid-template-rows: 100px 200px auto 100px;
-        grid-template-areas: "header" "main" "area" "footer";
-        grid-gap: 3em;
-        margin: 0 auto;
+        min-height: 750px;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat (7, 1 fr);
+        grid-template-areas: "header main" "header area" "header footer";
+        grid-gap: 3px;
     }
-    body {
-        background-color: header red;
-        background-color: main blue;
-        background-color: area gray;
-        background-color: footer green;
-        font-size: 20px;
-        color: blanchedalmond;
-        padding: 2rem;
+}
+
+body {
+    width: 1024px;
+    background-color: rgb(197, 186, 211);
+    min-height: 750px;
+}
+
+.header {
+    grid-area: 1/1/8/2;
+    width: 340px;
+    min-height: 750px;
+}
+
+.main {
+    grid-area: 1/2/5/4;
+    width: 683px;
+    min-height: 400px;
+}
+
+.area {
+    grid-area: 5/2/7/4;
+    width: 683px;
+    min-height: 300px;
+}
+
+.footer {
+    grid-area: 7/2/8/4;
+    width: 683px;
+    min-height: 50px;
+}
+
+@media (min-width: 1400px) {
+    .parent {
+        display: grid;
+        min-height: 1080px;
+        width: 100%;
+        grid-template-columns: repeat (5, 1fr);
+        grid-template-rows: repeat (10, 1 fr);
+        grid-template-areas: "header main main main area" "header footer footer footer area";
+        grid-gap: 3px;
+    }
+}
+
+body {
+    font-size: 14px;
+    color: #ffffff;
+    width: 1400px;
+    background-color: rgb(197, 186, 211);
+    min-height: 1100px;
+}
+
+.header {
+    grid-area: 1/1/11/2;
+    width: auto;
+    min-height: 1100px;
+}
+
+.main {
+    grid-area: 1/2/10/5;
+    width: auto;
+    min-height: 1000px;
+}
+
+.area {
+    grid-area: 1/5/11/6;
+    width: auto;
+    min-height: 1100px;
+}
+
+.footer {
+    grid-area: 10/2/11/5;
+    width: auto;
+    min-height: 100px;
 }
