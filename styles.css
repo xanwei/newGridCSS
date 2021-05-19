@@ -1,0 +1,19 @@
+@media (min-width: 320px) {
+    .parent {
+        display: grid;
+        grid-column: 400px;
+        grid-template-rows: 100px 200px auto 100px;
+        grid-template-areas: "header" "main" "area" "footer";
+        grid-gap: 3em;
+        margin: 0 auto;
+    }
+    body {
+        background-color: header red;
+        background-color: main blue;
+        background-color: area gray;
+        background-color: footer green;
+        font-size: 20px;
+        color: blanchedalmond;
+        padding: 2rem;
+    }
+}
